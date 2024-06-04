@@ -9,6 +9,7 @@ module.exports = {
         "active": "#AF47D2",
         "hover-2": "#FFDB00",
         "hover": "#FF8F00",
+        "text-footer": "#ffffff80"
       },
     },
   },

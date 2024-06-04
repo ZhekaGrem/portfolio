@@ -1,7 +1,10 @@
 import React from "react";
 import ToggleLang from "./ToggleLang";
-import Logo from "./Logo";
+import Logo from "../Logo";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import '../../lib/i18/i18n.js';
+
 
 const Header = () => {
   return (
@@ -19,10 +22,11 @@ export default Header;
 
 const Nav = () => {
    const pathname = useLocation();
+   const {t}= useTranslation();
   const navLinks = [
     {
       id: 1,
-      name: "Home",
+      name: "Welcome to React",
       href: "#home",
     },
     {
@@ -35,9 +39,7 @@ const Nav = () => {
       name: "Skills",
       href: "#skills",
     },
-    { id: 4,
-      name: "Experience",
-      href: "#experience" },
+    { id: 4, name: "Experience", href: "#experience" },
     {
       id: 5,
       name: "Projects",
@@ -58,7 +60,7 @@ const Nav = () => {
             <a
               href={link.href}
             >
-              {link.name}
+              {t(link.name)}
             </a>
           </li>
         ))}
