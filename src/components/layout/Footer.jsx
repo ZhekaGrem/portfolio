@@ -7,47 +7,52 @@ import { ReactComponent as FacebookIcon } from "../../assets/images/footer/faceb
 import { ReactComponent as LinkedinIcon } from "../../assets/images/footer/linkedin.svg";
 import { ReactComponent as InstagramIcon } from "../../assets/images/footer/instagram.svg";
 
-const LinkFooter = [
+
+const iconStyles =
+  "w-6 h-6 fill-footer hover:fill-icon-color-hover stroke-black hover:stroke-icon-stroke-hover";
+
+
+const SocialLinks = [
   {
     id: 1,
     name: "X",
-    icon: <XIcon className="w-6 h-6" />,
+    icon: <XIcon className={iconStyles} />,
     href: "/x.com",
   },
   {
     id: 2,
     name: "linkedin",
-    icon: <LinkedinIcon className="w-6 h-6" />,
+    icon: <LinkedinIcon className={iconStyles} />,
     href: "/linkedin",
   },
   {
     id: 3,
     name: "facebook",
-    icon: <FacebookIcon className="w-6 h-6" />,
+    icon: <FacebookIcon className={iconStyles} />,
     href: "#contact",
   },
   {
     id: 4,
     name: "telegram",
-    icon: <TelegramIcon className="w-6 h-6" />,
+    icon: <TelegramIcon className={iconStyles} />,
     href: "/telegram.com",
   },
   {
     id: 5,
     name: "inst",
-    icon: <InstagramIcon className="w-6 h-6" />,
+    icon: <InstagramIcon className={iconStyles} />,
     href: "/instagram.com",
-  }
+  },
 ];
 
 const Footer = () => {
   return (
-    <footer className="w-full static bottom-0 h-10 text-lg">
-      <div className="container flex sm:justify-between justify-center items-center gap-10 max-sm:flex-col">
-        <p className="caption lg:block text-text-footer">© 2024. All rights reserved.</p>
+    <footer className="w-full  h-10 text-lg bg-back pt-2">
+      <div className="container flex justify-between items-center gap-10  ">
+        <p className="border-8 border-black  caption lg:block text-footer">© 2024. All rights reserved.</p>
         <ul className="flex gap-6 flex-wrap">
-          {LinkFooter.map((link) => (
-            <li key={link.id} className="hover:scale-110 transition-transform ">
+          {SocialLinks.map((link) => (
+            <li key={link.id} className="hover:scale-110  transition-transform  ">
               <Link to={link.href}>{link.icon}</Link>
             </li>
           ))}

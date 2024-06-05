@@ -9,9 +9,15 @@ module.exports = {
         "active": "#AF47D2",
         "hover-2": "#FFDB00",
         "hover": "#FF8F00",
-        "text-footer": "#ffffff80"
+        "footer": "#ffffff80",
+        "icon-color-hover": "#85C2FF",
+        "icon-stroke-hover": "#55259C",
       },
     },
+     screens: {
+      "tablet": {"max":"850px"},
+      "burger-btn":{"min":"850px"}
+    }
   },
   plugins: [],
 };
