@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import "../../lib/i18/i18n.js";
 import i18next from 'i18next';
+import { motion } from "framer-motion";
+
+
+const spring = {
+  type: "spring",
+  stiffness: 500,
+  damping: 15,
+};
 
 const ToggleLang = ({ burgerMenu }) => {
   const [isOn, setIsOn] = useState(false);
@@ -26,11 +34,15 @@ const ToggleLang = ({ burgerMenu }) => {
         />
 
         <div className="  w-11 h-5 bg-active rounded-full shadow-inner transition-all " />
-        <span
-          className={`absolute w-4 h-4  bg-hover rounded-full shadow transition-transform ${
+        <motion.span
+          layout
+          transition={spring}
+          initial={false}
+          animate={{ x: isOn ? 24 : 4 }}
+          className={`absolute w-4 h-4  bg-hover rounded-full shadow  ${
             isOn ? "translate-x-6" : "translate-x-1"
           }`}
-        ></span>
+        ></motion.span>
         <span className="ml-3 font-medium text-text ">{isOn ? "EN" : "UA"}</span>
       </label>
     </div>

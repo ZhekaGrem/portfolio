@@ -8,11 +8,23 @@ import Experience from "./pages/Experience";
 import Progects from "./pages/Progects";
 import Contact from "./pages/Contact";
 
+import { motion, useScroll, useSpring } from "framer-motion";
+
+
 const App = () => {
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
-    <div className="flex flex-col bg-back  text-text min-h-screen  ">
+    <div className="flex flex-col bg-back  text-text   ">
       <Header />
-      <main className="flex-grow mt-16  ">
+        <motion.div className="progress-bar" style={{ scaleX }} />
+      <main className=" mt-16  ">
         <Home />
         <About />
         <Skills />

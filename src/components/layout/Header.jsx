@@ -25,11 +25,8 @@ const Header = () => {
         <Nav burgerMenu={burgerMenu} setBurgerMenu={setBurgerMenu} />
         <ToggleLang burgerMenu={burgerMenu} setBurgerMenu={setBurgerMenu} />
         <ButtonBurger handleBurgerButtonClick={handleBurgerButtonClick} burgerMenu={burgerMenu} />
-
-        {/* <button className="" onClick={burgerButton}>
-          X
-        </button> */}
       </div>
+      
     </header>
   );
 };

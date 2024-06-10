@@ -3,7 +3,7 @@ import React from 'react'
 const Progects = () => {
   return (
     <>
-      <section className=" container w-full h-full ">Progects</section>
+      <section className=" container  section">Progects</section>
     </>
   );
 }
