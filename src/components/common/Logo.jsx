@@ -1,18 +1,19 @@
 import React from "react";
-import logo from "../assets/images/logo.webp";
+import logo from "../../assets/images/logo-2.webp";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
-    <div>
-      <a href="#">
+    <div className="animate-pulse ">
+      <Link href="#">
         <img
           src={logo}
           className="object-fill"
           alt="web page Hrem Yevhenii"
-          width={150}
+          width={120}
           height={40}
         />
-      </a>
+      </Link>
     </div>
   );
 };
